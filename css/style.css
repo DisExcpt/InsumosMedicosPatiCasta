@@ -1,0 +1,198 @@
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Nuosu+SIL&display=swap');
+
+/* Golbals */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+a {
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+
+body {
+    font-family: 'Nuosu SIL', serif;
+    /* 10px = 1 rem */
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+.menu__logo {
+    font-size: 2rem;
+    letter-spacing: .3rem;
+}
+
+.menu__logo--color {
+    color: aqua;
+    font-size: 2rem;
+}
+
+/* menu styles */
+.menu {
+    background-color: #189AB4;
+    color: #fff;
+    height: 7rem;
+}
+
+.menu__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 120rem;
+    height: 100%;
+}
+
+.menu__links {
+    height: 100%;
+    transition: transform .5s;
+    display: flex;
+
+}
+
+.menu__item {
+    list-style: none;
+    position: relative;
+    height: 100%;
+    --transform: rotate(-90deg);
+    --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+.menu__item:hover {
+    --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    --transform: rotate(0deg);
+}
+
+.menu__arrow {
+    transform: var(--transform);
+    transition: transform .3s;
+    margin-left: .3rem;
+}
+
+.menu__nesting {
+    list-style: none;
+    transition: clip-path .3s;
+    clip-path: var(--clip);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: max-content;
+    transform: translateY(100%);
+    background-color: #05445E;
+}
+
+.menu__link {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 3rem;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.menu__link:hover {
+    background-color: #D4F1F4;
+    color: #189AB4;
+}
+
+.menu__link--inside {
+    padding: 2rem 8rem 2rem 2rem;
+}
+
+.menu__hamburger {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.menu__img {
+    display: block;
+    width: 3.6rem;
+}
+
+@media(max-width:800px) {
+    .menu__hamburger {
+        display: flex;
+    }
+
+    .menu__item {
+        --clip: 0;
+        overflow: hidden;
+    }
+
+    .menu__item--active {
+        --transform: rotate(0);
+        --background: #D4F1F4;
+    }
+
+    .mene__item--show {
+        background-color: var(--background);
+    }
+
+    .menu__links {
+        position: fixed;
+        max-width: 400px;
+        width: 100%;
+        top: 7rem;
+        right: 0;
+        bottom: 0;
+        background-color: #05445E;
+        overflow-y: auto;
+        display: grid;
+        grid-auto-rows: max-content;
+        transform: translateX(100%);
+    }
+
+    .menu__links--show {
+        transform: unset;
+        width: 100%;
+    }
+
+    .menu__link {
+        padding: 2.5rem 0;
+        padding-left: 3rem;
+        height: auto;
+    }
+
+    .menu__arrow {
+        margin-left: auto;
+        margin-right: .2rem;
+    }
+
+    .menu__nesting {
+        display: grid;
+        position: unset;
+        width: 100%;
+        transform: translateY(0);
+        height: 0;
+        transition: height .8s;
+    }
+
+    .menu__link--inside {
+        width: 90%;
+        margin-left: auto;
+        border-left: 1px solid #05445E;
+    }
+}
