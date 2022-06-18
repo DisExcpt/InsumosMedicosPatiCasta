@@ -141,7 +141,7 @@ body {
 
 .hero {
     padding: 3rem 0;
-    height: .5vh;
+    height: 60rem;
 }
 
 
@@ -151,6 +151,25 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
+}
+
+.footer {
+    background-color: #05445E;
+    height: 9rem;
+    text-align: left;
+    align-items: center;
+}
+
+.footer__container {
+
+    width: 80%;
+    margin: 0 auto;
+}
+
+.footer__container p {
+    font-size: 2rem;
+    padding-top: 2.5rem;
+    color: #fff;
 }
 
 /* media query */
