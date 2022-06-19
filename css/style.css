@@ -285,67 +285,85 @@ body {
 }
 
 /* media query */
-@media(max-width:800px) {
-    .menu__hamburger {
-        display: flex;
-    }
+@media(max-width:700px) {
 
-    .menu__item {
-        --clip: 0;
-        overflow: hidden;
-    }
-
-    .menu__item--active {
-        --transform: rotate(0);
-        --background: var(--babyBlue);
-    }
-
-    .mene__item--show {
-        background-color: var(--background);
-    }
-
+    /* nav */
     .menu__links {
-        position: fixed;
-        max-width: 400px;
-        width: 100%;
-        top: 7rem;
-        right: 0;
-        bottom: 0;
-        background-color: var(--naviBlue);
-        overflow-y: auto;
-        display: grid;
-        grid-auto-rows: max-content;
-        transform: translateX(100%);
-    }
-
-    .menu__links--show {
-        transform: unset;
-        width: 100%;
-    }
-
-    .menu__link {
-        padding: 2.5rem 0;
-        padding-left: 3rem;
-        height: auto;
-    }
-
-    .menu__arrow {
-        margin-left: auto;
-        margin-right: .2rem;
-    }
-
-    .menu__nesting {
-        display: grid;
-        position: unset;
-        width: 100%;
-        transform: translateY(0);
-        height: 0;
-        transition: height .8s;
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
     }
 
     .menu__link--inside {
-        width: 90%;
-        margin-left: auto;
-        border-left: 1px solid var(--naviBlue);
+        padding: 1.1rem 7rem 1.1rem 2rem;
+        font-size: 1.6rem;
     }
+
+    /* hero */
+    .hero__conta {
+        margin-top: 12rem;
+        padding-top: 0;
+        height: 25rem;
+        width: 80%;
+    }
+
+    .hero__slider {
+        height: 100%;
+        width: 100%;
+    }
+
+    .hero__slider:nth-child(2),
+    .hero__slider:nth-child(3) {
+        height: 100%;
+        width: 100%;
+    }
+
+    .hero__slider img {
+        width: 85%;
+        height: 100%;
+    }
+
+
+
+    .hero__slider>h2 {
+        font-size: 1.5rem;
+        width: 20%;
+    }
+
+    /* about */
+    .about {
+        width: 100%;
+        height: 22rem;
+        padding-top: 0;
+    }
+
+    .about__bar {
+        display: grid;
+        padding-top: 3rem;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 1rem;
+
+    }
+
+    .about__bar h2 {
+        font-size: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .about__bar p {
+        padding-right: 2rem;
+        text-align: center;
+        grid-column: 2 / 3;
+        font-size: 1.3rem;
+
+    }
+
+    /* categories */
+    .container {
+        width: 90%;
+    }
+
+    /* footer */
+
+
 }
