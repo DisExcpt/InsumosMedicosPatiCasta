@@ -55,7 +55,7 @@
 const slider = document.querySelector(".hero__container");
 const slider_one = document.querySelectorAll(".hero__slider");
 let conta = 1;
-let width = slider_one[0].clientWidth;
+let width;
 const interval = 3000;
 
 window.addEventListener('resize', animate_slider());
@@ -64,10 +64,12 @@ function animate_slider() {
     width = slider_one[0].clientWidth;
 }
 
+
 setInterval(function () {
     slides();
 }, interval);
 function slides() {
+    animate_slider();
     slider.style.transform = `translate(-${width * conta}px)`;
     slider.style.transition = "transform .8s";
     conta++;
